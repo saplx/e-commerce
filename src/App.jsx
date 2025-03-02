@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { StoreProvider } from "./context/StoreContext";
+
 
 import Header from "./components/Header/Header.jsx";
 import Footer from "./components/Footer/Footer";
@@ -10,19 +12,21 @@ import "./styles/index.scss";
 
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <main className="main">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/catalog" element={<Catalog />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <StoreProvider>
+      <Router>
+        <div className="app">
+          <Header />
+          <main className="main">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/catalog" element={<Catalog />} />
+              <Route path="/cart" element={<Cart />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </StoreProvider>
   );
 }
 

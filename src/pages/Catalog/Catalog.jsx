@@ -2,16 +2,19 @@ import { useEffect, useState } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { fetchCatalog } from "../../services/fetchCatalog";
 import "./Catalog.scss";
+import { useStore } from "../../context/StoreContext";
 
 const Catalog = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Получаем функции из глобального контекста
+  const { addToCart, toggleFavorite } = useStore();
+
   useEffect(() => {
     fetchCatalog()
       .then((data) => {
-        console.log(data);
         setProducts(data);
         setLoading(false);
       })
@@ -21,15 +24,6 @@ const Catalog = () => {
         setLoading(false);
       });
   }, []);
-
-  const handleAddToCart = (product) => {
-    console.log("Добавить в корзину", product);
-  };
-
-  const handleToggleFavorite = (product) => {
-    // Здесь логика переключения состояния "избранного"
-    console.log("Переключить избранное", product);
-  };
 
   if (loading) return <div>Загрузка...</div>;
   if (error) return <div>{error}</div>;
@@ -41,8 +35,8 @@ const Catalog = () => {
           <ProductCard
             key={product.id}
             product={product}
-            onAddToCart={handleAddToCart}
-            onToggleFavorite={handleToggleFavorite}
+            onAddToCart={() => addToCart(product)}
+            onToggleFavorite={() => toggleFavorite(product)}
           />
         ))}
       </div>
