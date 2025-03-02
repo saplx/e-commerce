@@ -1,0 +1,123 @@
+{
+  "catalog": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "price": 1999,
+      "oldPrice": 2499,
+      "description": "Краткое описание товара 1. Отличное соотношение цены и качества.",
+      "mainImage": "assets/images/product1.jpg",
+      "gallery": [
+        "assets/images/product1.jpg",
+        "assets/images/product1_2.jpg"
+      ],
+      "variations": {
+        "color": ["Красный", "Синий", "Зелёный"],
+        "size": ["S", "M", "L"]
+      },
+      "isFavorite": false
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "price": 2999,
+      "oldPrice": 3499,
+      "description": "Краткое описание товара 2. Идеально подходит для повседневного использования.",
+      "mainImage": "assets/images/product2.jpg",
+      "gallery": [
+        "assets/images/product2.jpg",
+        "assets/images/product2_2.jpg"
+      ],
+      "variations": {
+        "color": ["Черный", "Белый"],
+        "size": ["M", "L", "XL"]
+      },
+      "isFavorite": false
+    },
+    {
+      "id": 3,
+      "name": "Product 2",
+      "price": 2999,
+      "oldPrice": 3499,
+      "description": "Краткое описание товара 2. Идеально подходит для повседневного использования.",
+      "mainImage": "assets/images/product2.jpg",
+      "gallery": [
+        "assets/images/product2.jpg",
+        "assets/images/product2_2.jpg"
+      ],
+      "variations": {
+        "color": ["Черный", "Белый"],
+        "size": ["M", "L", "XL"]
+      },
+      "isFavorite": false
+    },
+    {
+      "id": 4,
+      "name": "Product 2",
+      "price": 2999,
+      "oldPrice": 3499,
+      "description": "Краткое описание товара 2. Идеально подходит для повседневного использования.",
+      "mainImage": "assets/images/product2.jpg",
+      "gallery": [
+        "assets/images/product2.jpg",
+        "assets/images/product2_2.jpg"
+      ],
+      "variations": {
+        "color": ["Черный", "Белый"],
+        "size": ["M", "L", "XL"]
+      },
+      "isFavorite": false
+    },
+    {
+      "id": 5,
+      "name": "Product 2",
+      "price": 2999,
+      "oldPrice": 3499,
+      "description": "Краткое описание товара 2. Идеально подходит для повседневного использования.",
+      "mainImage": "assets/images/product2.jpg",
+      "gallery": [
+        "assets/images/product2.jpg",
+        "assets/images/product2_2.jpg"
+      ],
+      "variations": {
+        "color": ["Черный", "Белый"],
+        "size": ["M", "L", "XL"]
+      },
+      "isFavorite": false
+    },{
+      "id": 6,
+      "name": "Product 2",
+      "price": 2999,
+      "oldPrice": 3499,
+      "description": "Краткое описание товара 2. Идеально подходит для повседневного использования.",
+      "mainImage": "assets/images/product2.jpg",
+      "gallery": [
+        "assets/images/product2.jpg",
+        "assets/images/product2_2.jpg"
+      ],
+      "variations": {
+        "color": ["Черный", "Белый"],
+        "size": ["M", "L", "XL"]
+      },
+      "isFavorite": false
+    }
+    ,
+    {
+      "id": 7,
+      "name": "Product 2",
+      "price": 2999,
+      "oldPrice": 3499,
+      "description": "Краткое описание товара 2. Идеально подходит для повседневного использования.",
+      "mainImage": "assets/images/product2.jpg",
+      "gallery": [
+        "assets/images/product2.jpg",
+        "assets/images/product2_2.jpg"
+      ],
+      "variations": {
+        "color": ["Черный", "Белый"],
+        "size": ["M", "L", "XL"]
+      },
+      "isFavorite": false
+    }
+  ]
+}

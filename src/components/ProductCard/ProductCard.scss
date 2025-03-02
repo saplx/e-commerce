@@ -1,0 +1,109 @@
+.productCard {
+  max-width: 300px; // Ограничиваем ширину карточки
+  margin: 0 auto;   // Центрируем карточку внутри ячейки grid
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: box-shadow 0.3s;
+  
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &__imageWrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+  }
+
+  &__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: 16px;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    margin: 0 0 8px;
+  }
+
+  &__price {
+    margin: 8px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  &__oldPrice {
+    text-decoration: line-through;
+    color: #888;
+  }
+
+  &__currentPrice {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  &__description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 8px 0;
+  }
+
+  &__variations {
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    & .productCard__variation {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  &__actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 12px;
+  }
+
+  &__addToCart,
+  &__favorite {
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  &__addToCart {
+    background-color: #007bff;
+    color: #fff;
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  &__favorite {
+    background-color: #f0f0f0;
+    color: #333;
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+}
