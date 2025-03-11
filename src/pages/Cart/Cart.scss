@@ -1,31 +1,118 @@
-.cart {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-.cart h2 {
+.cart {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
   margin-bottom: 20px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+  }
+
+  .cartItem {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eaeaea;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    // Обертка для информации о товаре
+    &__info {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      img {
+        width: 100px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-right: 20px;
+      }
+
+      // Контейнер с описанием товара и управлением количеством
+      .info-content {
+        flex-grow: 1;
+
+        h3 {
+          margin: 0 0 5px;
+          font-size: 18px;
+          color: #444;
+        }
+
+        p {
+          margin: 5px 0;
+          font-size: 16px;
+          color: #666;
+        }
+
+        .quantity-control {
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+
+          button {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            &:hover {
+              background-color: #0056b3;
+            }
+          }
+
+          span {
+            margin: 0 10px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .cartTotal {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
 }
 
-.cartItem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.cartItem__info {
-  flex: 1;
-}
-
-.cartTotal {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  font-weight: bold;
+.cart-offer {
+  display: block;
+  width: 100%;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #218838;
+  }
 }
 
 .cartEmpty {
-  padding: 20px;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 20px;
+  color: #999;
+  padding: 50px 0;
 }

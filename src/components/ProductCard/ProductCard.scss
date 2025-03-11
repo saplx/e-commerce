@@ -1,109 +1,169 @@
 .productCard {
-  max-width: 300px; // Ограничиваем ширину карточки
-  margin: 0 auto;   // Центрируем карточку внутри ячейки grid
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  overflow: hidden;
-  background-color: #fff;
-  transition: box-shadow 0.3s;
-  
+
   &:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
 
   &__imageWrapper {
-    width: 100%;
-    height: 200px;
+    position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f9f9f9;
-  }
 
-  &__image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
+    .productCard__image {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover .productCard__image {
+      transform: scale(1.05);
+    }
+
+    // Кнопка избранного — сердечко
+    .productCard__favorite {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #e74c3c;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      outline: none;
+      z-index: 1;
+
+      &:hover {
+        background: rgba(255, 255, 255, 1);
+      }
+    }
   }
 
   &__content {
-    padding: 16px;
-  }
-
-  &__title {
-    font-size: 1.2rem;
-    margin: 0 0 8px;
-  }
-
-  &__price {
-    margin: 8px 0;
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-  }
-
-  &__oldPrice {
-    text-decoration: line-through;
-    color: #888;
-  }
-
-  &__currentPrice {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #333;
-  }
-
-  &__description {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 8px 0;
-  }
-
-  &__variations {
-    margin: 8px 0;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-
-    & .productCard__variation {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-  }
-
-  &__actions {
-    margin-top: 12px;
-    display: flex;
-    gap: 12px;
-  }
-
-  &__addToCart,
-  &__favorite {
     flex: 1;
-    padding: 10px 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-  }
 
-  &__addToCart {
-    background-color: #007bff;
-    color: #fff;
-    &:hover {
-      background-color: #0056b3;
+    .productCard__title {
+      font-size: 20px;
+      color: #333;
+      margin: 10px 0;
+      font-weight: 500;
     }
-  }
 
-  &__favorite {
-    background-color: #f0f0f0;
-    color: #333;
-    &:hover {
-      background-color: #e0e0e0;
+    .productCard__price {
+      font-size: 18px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: baseline;
+
+      .productCard__oldPrice {
+        text-decoration: line-through;
+        color: #888;
+        margin-right: 10px;
+        font-size: 16px;
+      }
+
+      .productCard__currentPrice {
+        color: #27ae60;
+        font-weight: bold;
+      }
+    }
+
+    .productCard__description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+      flex-grow: 1;
+    }
+
+    .productCard__variations {
+      margin-bottom: 10px;
+
+      .productCard__variation {
+        margin-bottom: 5px;
+
+        label {
+          font-size: 14px;
+          color: #444;
+          margin-right: 5px;
+        }
+
+        .productCard__select {
+          padding: 5px;
+          font-size: 14px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-color: #f9f9f9;
+        }
+      }
+    }
+
+    .productCard__actions {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .productCard__addToCart {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        font-size: 14px;
+        outline: none;
+        
+        &:hover {
+          background-color: #2980b9;
+        }
+      }
+
+      // Если решите показывать количество товара и кнопки +/- прямо на карточке
+      .quantity-control {
+        display: flex;
+        align-items: center;
+
+        button {
+          background-color: #3498db;
+          color: #fff;
+          border: none;
+          padding: 5px 10px;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background 0.3s ease;
+          font-size: 14px;
+          outline: none;
+
+          &:hover {
+            background-color: #2980b9;
+          }
+        }
+
+        span {
+          margin: 0 10px;
+          font-size: 16px;
+          color: #333;
+        }
+      }
     }
   }
 }

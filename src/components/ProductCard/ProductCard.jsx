@@ -19,6 +19,12 @@ const ProductCard = ({ product, onAddToCart, onToggleFavorite }) => {
           alt={name}
           className="productCard__image"
         />
+        <button 
+          className="productCard__favorite" 
+          onClick={() => onToggleFavorite(product)}
+        >
+          {isFavorite ? '❤️' : '🤍'}
+        </button>
       </div>
       <div className="productCard__content">
         <h3 className="productCard__title">{name}</h3>
@@ -43,7 +49,7 @@ const ProductCard = ({ product, onAddToCart, onToggleFavorite }) => {
                   key={variationName}
                   className="productCard__variation"
                 >
-                  <label>{variationName}:</label>
+                  <label>Цвет:</label>
                   <select className="productCard__select">
                     {options.map((option) => (
                       <option key={option} value={option}>
@@ -63,12 +69,12 @@ const ProductCard = ({ product, onAddToCart, onToggleFavorite }) => {
           >
             Добавить в корзину
           </button>
-          <button
-            className="productCard__favorite"
-            onClick={() => onToggleFavorite(product)}
-          >
-            {isFavorite ? 'Удалить из избранного' : 'В избранное'}
-          </button>
+          {/* Здесь можно разместить блок для контроля количества, если нужно */}
+          {/* <div className="quantity-control">
+              <button onClick={() => onDecrease(product)}>-</button>
+              <span>{product.quantity}</span>
+              <button onClick={() => onAddToCart(product)}>+</button>
+          </div> */}
         </div>
       </div>
     </div>

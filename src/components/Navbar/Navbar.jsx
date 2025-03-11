@@ -6,13 +6,8 @@ const Navbar = () => {
     <nav className="header__nav">
       <ul className="nav__list">
         <li className="nav__item">
-          <Link className="nav__link" to="/">
-            Главная
-          </Link>
-        </li>
-        <li className="nav__item">
           <Link className="nav__link" to="/catalog">
-            Каталог
+            Магазин
           </Link>
         </li>
         <li className="nav__item">
